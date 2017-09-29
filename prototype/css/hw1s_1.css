@@ -1,0 +1,43 @@
+
+
+#tabmenu{
+    position:relative;
+    height:29px;
+    font-family:'돋움',dotum;
+    font-size:12px
+}
+#tabmenu ul{
+    margin:0;
+    padding:0
+}
+#tabmenu ul li{
+    list-style:none;
+    background-color:black;
+    float:left;
+    margin-right:5px;
+    line-height:40px
+}
+#tabmenu ul li a{
+    background-color:black;
+    display:inline-block;
+    padding:2px 16px 2px;
+
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+}
+#tabmenu ul li a:hover{
+    color:yellow;
+}
+#tabmenu ul li.on{
+    background-color:#999999;
+}
+#tabmenu ul li.on a{
+    color:black;
+    background-color:#999999;
+}
+#tab1{border:10px solid #999; padding:10px; width:90%; height:800px;}
+#tab2{border:10px solid #999; padding:10px; width:90%; height:800px;}
+#tab3{border:10px solid #999; padding:10px; width:90%; height:800px;}
+#tab4{border:10px solid #999; padding:10px; width:90%; height:800px;}
+#tab5{border:10px solid #999; padding:10px; width:90%; height:800px;}

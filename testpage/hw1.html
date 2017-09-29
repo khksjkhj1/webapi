@@ -1,0 +1,441 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>OpenAPI Test Page</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+          crossorigin="anonymous">
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(https://fonts.googleapis.com/css?family=Timmana);
+
+        a {  text-decoration: none; }
+
+        textarea { resize: none; !important }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="container">
+
+<ul class="nav nav-tabs">
+
+    <div class="page-header">
+     <h1>Find Hospital <small>in Seoul</small></h1>
+    </div>
+    <li role="presentation" class="active"><a data-target="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Home</a></li>
+    <li role="presentation"><a data-target="#profile" role="tab" id="tab1" data-toggle="tab" aria-controls="profile" aria-expanded="false">가까운 병원 찾기</a></li>
+    <li role="presentation"><a data-target="#dist" role="tab" id="tab2" data-toggle="tab" aria-controls="dist" aria-expanded="false">지역별로 찾기</a></li>
+
+</ul>
+    <div id="myTabContent" class="tab-content">
+        <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+
+
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+            <div class="panel-heading">
+                <h3 class="panel-title">현재 위치에서 가까운 병원 검색 - 전국 병‧의원 찾기 서비스(국립중앙의료원 제공)</h3> <br>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <!-- 구 선택 -->
+                    <select class="form-control" id="hospNumSelect">
+                        <option value="5">5개</option>
+                        <option value="10">10개</option>
+                        <option value="20">20개</option>
+                        <option value="30">30개</option>
+                        <option value="50">50개</option>
+
+                    </select>
+                    <!-- 진료과 선택 -->
+
+                </div>
+            </div>
+                <button type="submit" class="btn btn-primary" id="locationButton">Location</button>
+                <p id="demo"></p>
+
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="dist" aria-labelledby="profile-tab">
+
+            <div class="panel-heading">
+            <h3 class="panel-title">병원 정보 입력 검색 - 병원 정보 서비스(건강보험심사평가원 제공)</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <!-- 구 선택 -->
+                    <select class="form-control" id="hospSgguSelect">
+                        <option value="110016">종로구</option>
+                        <option value="110017">중구</option>
+                        <option value="110014">용산구</option>
+                        <option value="110011">성동구</option>
+                        <option value="110023">광진구</option>
+                        <option value="110007">동대문구</option>
+                        <option value="110019">중랑구</option>
+                        <option value="110012">성북구</option>
+                        <option value="110024">강북구</option>
+                        <option value="110006">도봉구</option>
+                        <option value="110022">노원구</option>
+                        <option value="110015">은평구</option>
+                        <option value="110010">서대문구</option>
+                        <option value="110009">마포구</option>
+                        <option value="110020">양천구</option>
+                        <option value="110003">강서구</option>
+                        <option value="110005">구로구</option>
+                        <option value="110025">금천구</option>
+                        <option value="110013">영등포구</option>
+                        <option value="110008">동작구</option>
+                        <option value="110004">관악구</option>
+                        <option value="110021">서초구</option>
+                        <option value="110001">강남구</option>
+                        <option value="110018">송파구</option>
+                        <option value="110002">강동구</option>
+                    </select>
+                    <!-- 진료과 선택 -->
+                    <select class="form-control" id="hospClcdSelect">
+                        <option value="00">일반의</option>
+                        <option value="01">내과</option>
+                        <option value="02">신경과</option>
+                        <option value="03">정신건강의학과</option>
+                        <option value="04">외과</option>
+                        <option value="05">정형외과</option>
+                        <option value="06">신경외과</option>
+                        <option value="07">흉부외과</option>
+                        <option value="08">성형외과</option>
+                        <option value="09">마취통증의학과</option>
+                        <option value="10">산부인과</option>
+                        <option value="11">소아청소년과</option>
+                        <option value="12">안과</option>
+                        <option value="13">이비인후과</option>
+                        <option value="14">피부과</option>
+                        <option value="15">비뇨기과</option>
+
+                    </select>
+
+                    <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            <h3 class="panel-title"><a href="https://developers.google.com/maps/?hl=ko">검색 결과(지도 마커를 클릭해보세요!)</a></h3>
+        </div>
+        <div class="panel-body">
+            <div id="map" style="width:100%; height:640px;"></div>
+        </div>
+    </div>
+
+    <br>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>]
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+<!-- xml2json -->
+<script>
+    /*
+     ### jQuery XML to JSON Plugin v1.1 - 2008-07-01 ###
+     * http://www.fyneworks.com/ - diego@fyneworks.com
+     * Dual licensed under the MIT and GPL licenses:
+     *   http://www.opensource.org/licenses/mit-license.php
+     *   http://www.gnu.org/licenses/gpl.html
+     ###
+     Website: http://www.fyneworks.com/jquery/xml-to-json/
+     *//*
+     # INSPIRED BY: http://www.terracoder.com/
+     AND: http://www.thomasfrank.se/xml_to_json.html
+     AND: http://www.kawa.net/works/js/xml/objtree-e.html
+     *//*
+     This simple script converts XML (document of code) into a JSON object. It is the combination of 2
+     'xml to json' great parsers (see below) which allows for both 'simple' and 'extended' parsing modes.
+     */
+    // Avoid collisions
+    ;if(window.jQuery) (function($){
+
+        // Add function to jQuery namespace
+        $.extend({
+
+            // converts xml documents and xml text to json object
+            xml2json: function(xml, extended) {
+                if(!xml) return {}; // quick fail
+
+                //### PARSER LIBRARY
+                // Core function
+                function parseXML(node, simple){
+                    if(!node) return null;
+                    var txt = '', obj = null, att = null;
+                    var nt = node.nodeType, nn = jsVar(node.localName || node.nodeName);
+                    var nv = node.text || node.nodeValue || '';
+                    /*DBG*/ //if(window.console) console.log(['x2j',nn,nt,nv.length+' bytes']);
+                    if(node.childNodes){
+                        if(node.childNodes.length>0){
+                            /*DBG*/ //if(window.console) console.log(['x2j',nn,'CHILDREN',node.childNodes]);
+                            $.each(node.childNodes, function(n,cn){
+                                var cnt = cn.nodeType, cnn = jsVar(cn.localName || cn.nodeName);
+                                var cnv = cn.text || cn.nodeValue || '';
+                                /*DBG*/ //if(window.console) console.log(['x2j',nn,'node>a',cnn,cnt,cnv]);
+                                if(cnt == 8){
+                                    /*DBG*/ //if(window.console) console.log(['x2j',nn,'node>b',cnn,'COMMENT (ignore)']);
+                                    return; // ignore comment node
+                                }
+                                else if(cnt == 3 || cnt == 4 || !cnn){
+                                    // ignore white-space in between tags
+                                    if(cnv.match(/^\s+$/)){
+                                        /*DBG*/ //if(window.console) console.log(['x2j',nn,'node>c',cnn,'WHITE-SPACE (ignore)']);
+                                        return;
+                                    };
+                                    /*DBG*/ //if(window.console) console.log(['x2j',nn,'node>d',cnn,'TEXT']);
+                                    txt += cnv.replace(/^\s+/,'').replace(/\s+$/,'');
+                                    // make sure we ditch trailing spaces from markup
+                                }
+                                else{
+                                    /*DBG*/ //if(window.console) console.log(['x2j',nn,'node>e',cnn,'OBJECT']);
+                                    obj = obj || {};
+                                    if(obj[cnn]){
+                                        /*DBG*/ //if(window.console) console.log(['x2j',nn,'node>f',cnn,'ARRAY']);
+
+                                        // http://forum.jquery.com/topic/jquery-jquery-xml2json-problems-when-siblings-of-the-same-tagname-only-have-a-textnode-as-a-child
+                                        if(!obj[cnn].length) obj[cnn] = myArr(obj[cnn]);
+                                        obj[cnn] = myArr(obj[cnn]);
+
+                                        obj[cnn][ obj[cnn].length ] = parseXML(cn, true/* simple */);
+                                        obj[cnn].length = obj[cnn].length;
+                                    }
+                                    else{
+                                        /*DBG*/ //if(window.console) console.log(['x2j',nn,'node>g',cnn,'dig deeper...']);
+                                        obj[cnn] = parseXML(cn);
+                                    };
+                                };
+                            });
+                        };//node.childNodes.length>0
+                    };//node.childNodes
+                    if(node.attributes){
+                        if(node.attributes.length>0){
+                            /*DBG*/ //if(window.console) console.log(['x2j',nn,'ATTRIBUTES',node.attributes])
+                            att = {}; obj = obj || {};
+                            $.each(node.attributes, function(a,at){
+                                var atn = jsVar(at.name), atv = at.value;
+                                att[atn] = atv;
+                                if(obj[atn]){
+                                    /*DBG*/ //if(window.console) console.log(['x2j',nn,'attr>',atn,'ARRAY']);
+
+                                    // http://forum.jquery.com/topic/jquery-jquery-xml2json-problems-when-siblings-of-the-same-tagname-only-have-a-textnode-as-a-child
+                                    //if(!obj[atn].length) obj[atn] = myArr(obj[atn]);//[ obj[ atn ] ];
+                                    obj[cnn] = myArr(obj[cnn]);
+
+                                    obj[atn][ obj[atn].length ] = atv;
+                                    obj[atn].length = obj[atn].length;
+                                }
+                                else{
+                                    /*DBG*/ //if(window.console) console.log(['x2j',nn,'attr>',atn,'TEXT']);
+                                    obj[atn] = atv;
+                                };
+                            });
+                            //obj['attributes'] = att;
+                        };//node.attributes.length>0
+                    };//node.attributes
+                    if(obj){
+                        obj = $.extend( (txt!='' ? new String(txt) : {}),/* {text:txt},*/ obj || {}/*, att || {}*/);
+                        txt = (obj.text) ? (typeof(obj.text)=='object' ? obj.text : [obj.text || '']).concat([txt]) : txt;
+                        if(txt) obj.text = txt;
+                        txt = '';
+                    };
+                    var out = obj || txt;
+                    //console.log([extended, simple, out]);
+                    if(extended){
+                        if(txt) out = {};//new String(out);
+                        txt = out.text || txt || '';
+                        if(txt) out.text = txt;
+                        if(!simple) out = myArr(out);
+                    };
+                    return out;
+                };// parseXML
+                // Core Function End
+                // Utility functions
+                var jsVar = function(s){ return String(s || '').replace(/-/g,"_"); };
+
+                // NEW isNum function: 01/09/2010
+                // Thanks to Emile Grau, GigaTecnologies S.L., www.gigatransfer.com, www.mygigamail.com
+                function isNum(s){
+                    // based on utility function isNum from xml2json plugin (http://www.fyneworks.com/ - diego@fyneworks.com)
+                    // few bugs corrected from original function :
+                    // - syntax error : regexp.test(string) instead of string.test(reg)
+                    // - regexp modified to accept  comma as decimal mark (latin syntax : 25,24 )
+                    // - regexp modified to reject if no number before decimal mark  : ".7" is not accepted
+                    // - string is "trimmed", allowing to accept space at the beginning and end of string
+                    var regexp=/^((-)?([0-9]+)(([\.\,]{0,1})([0-9]+))?$)/
+                    return (typeof s == "number") || regexp.test(String((s && typeof s == "string") ? jQuery.trim(s) : ''));
+                };
+                // OLD isNum function: (for reference only)
+                //var isNum = function(s){ return (typeof s == "number") || String((s && typeof s == "string") ? s : '').test(/^((-)?([0-9]*)((\.{0,1})([0-9]+))?$)/); };
+
+                var myArr = function(o){
+
+                    // http://forum.jquery.com/topic/jquery-jquery-xml2json-problems-when-siblings-of-the-same-tagname-only-have-a-textnode-as-a-child
+                    //if(!o.length) o = [ o ]; o.length=o.length;
+                    if(!$.isArray(o)) o = [ o ]; o.length=o.length;
+
+                    // here is where you can attach additional functionality, such as searching and sorting...
+                    return o;
+                };
+                // Utility functions End
+                //### PARSER LIBRARY END
+
+                // Convert plain text to xml
+                if(typeof xml=='string') xml = $.text2xml(xml);
+
+                // Quick fail if not xml (or if this is a node)
+                if(!xml.nodeType) return;
+                if(xml.nodeType == 3 || xml.nodeType == 4) return xml.nodeValue;
+
+                // Find xml root node
+                var root = (xml.nodeType == 9) ? xml.documentElement : xml;
+
+                // Convert xml to json
+                var out = parseXML(root, true /* simple */);
+
+                // Clean-up memory
+                xml = null; root = null;
+
+                // Send output
+                return out;
+            },
+
+            // Convert text to XML DOM
+            text2xml: function(str) {
+                // NOTE: I'd like to use jQuery for this, but jQuery makes all tags uppercase
+                //return $(xml)[0];
+                var out;
+                try{
+                    var xml = ($.browser.msie)?new ActiveXObject("Microsoft.XMLDOM"):new DOMParser();
+                    xml.async = false;
+                }catch(e){ throw new Error("XML Parser could not be instantiated") };
+                try{
+                    if($.browser.msie) out = (xml.loadXML(str))?xml:false;
+                    else out = xml.parseFromString(str, "text/xml");
+                }catch(e){ throw new Error("Error parsing XML string") };
+                return out;
+            }
+
+        }); // extend $
+
+    })(jQuery);
+</script>
+<!-- jqueryajax -->
+<script>
+    /**
+     * jQuery.ajax mid - CROSS DOMAIN AJAX
+     * ---
+     * @author James Padolsey (http://james.padolsey.com)
+     * @version 0.11
+     * @updated 12-JAN-10
+     * ---
+     * Note: Read the README!
+     * ---
+     * @info http://james.padolsey.com/javascript/cross-domain-requests-with-jquery/
+     */
+
+    jQuery.ajax = (function(_ajax){
+
+        var protocol = location.protocol,
+                hostname = location.hostname,
+                exRegex = RegExp(protocol + '//' + hostname),
+                YQL = 'http' + (/^https/.test(protocol)?'s':'') + '://query.yahooapis.com/v1/public/yql?callback=?',
+                query = 'select * from xml where url="{URL}"';
+
+        function isExternal(url) {
+            return !exRegex.test(url) && /:\/\//.test(url);
+        }
+
+        return function(o) {
+
+            var url = o.url;
+
+            if ( /get/i.test(o.type) && !/json/i.test(o.dataType) && isExternal(url) ) {
+
+                // Manipulate options so that JSONP-x request is made to YQL
+
+                o.url = YQL;
+                o.dataType = 'json';
+
+                o.data = {
+                    q: query.replace(
+                            '{URL}',
+                            url + (o.data ?
+                            (/\?/.test(url) ? '&' : '?') + jQuery.param(o.data)
+                                    : '')
+                    ),
+                    format: 'xml'
+                };
+
+                // Since it's a JSONP request
+                // complete === success
+                if (!o.success && o.complete) {
+                    o.success = o.complete;
+                    delete o.complete;
+                }
+
+                o.success = (function(_success){
+                    return function(data) {
+
+                        if (_success) {
+                            // Fake XHR callback.
+                            _success.call(this, {
+                                responseText: (data.results[0] || '')
+                                // YQL screws with <script>s
+                                // Get rid of them
+                                        .replace(/<script[^>]+?\/>|<script(.|\s)*?\/script>/gi, '')
+                            }, 'success');
+                        }
+
+                    };
+                })(o.success);
+            }
+
+            return _ajax.apply(this, arguments);
+        };
+
+    })(jQuery.ajax);
+</script>
+<!-- googlemap -->
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASPo1x7pS72_qGMuOnuiXInl3zYkt13kk&callback=initMap"
+        async defer></script>
+
+    <script src="request.js"></script>
+    <script src="style.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+
+#tabmenu{
+    margin-top:50px;
+    position:absolute;
+    height:30px;
+    font-family:'돋움',dotum;
+    font-size:12px
+}
+#tabmenu ul{
+    margin:0;
+    padding:0
+}
+#tabmenu ul li{
+    list-style:none;
+    background-color:darkgreen;
+    line-height:60px
+}
+#tabmenu ul li a{
+    background-color:darkgreen;
+    display:inline-block;
+    padding:2px 16px 2px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+}
+#tabmenu ul li a:hover{
+    color:yellow;
+}
+#tabmenu ul li.on{
+    background-color:greenyellow;
+}
+#tabmenu ul li.on a{
+    color:black;
+    background-color:greenyellow;
+}
+#tab1{margin-top:30px;margin-left:84px;border:10px solid greenyellow; width:90%; height:800px;}
+#tab2{margin-top:30px;margin-left:84px;border:10px solid greenyellow; width:90%; height:2000px;}
+#tab3{margin-top:30px;margin-left:84px;border:10px solid greenyellow; width:90%; height:3300px;}
+#tab4{margin-top:30px;margin-left:84px;border:10px solid greenyellow; width:90%; height:3200px;}
+#tab5{margin-top:30px;margin-left:84px;border:10px solid greenyellow; width:90%; height:800px;}
+
+
+#houkoku1{
+    width: 70%;
+    height: 70%;
+    margin: 200px auto;
+
+
+}
+#righttap{
+    text-align:right;
+}
+.container-fluid{
+    margin:auto;
+
+}

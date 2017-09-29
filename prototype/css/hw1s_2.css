@@ -1,0 +1,43 @@
+
+#tabmenu{
+    position:static;
+    height:29px;
+    font-family:'돋움',dotum;
+    font-size:12px
+}
+#tabmenu ul{
+    margin:0;
+    padding:0;
+    float:right;
+}
+#tabmenu ul li{
+    list-style:none;
+    float:left;
+    margin-right:5px;
+    line-height:40px
+}
+#tabmenu ul li a{
+    border:5px dashed #333 ;
+    background-color:crimson;
+    display:inline-block;
+    padding:2px 16px 2px;
+
+    font-family:'궁서체';
+    color:black;
+    cursor:pointer;
+}
+#tabmenu ul li a:hover{
+    color:white;
+}
+#tabmenu ul li.on{
+    background-color:hotpink;
+}
+#tabmenu ul li.on a{
+    color:black;
+    background-color:hotpink;
+}
+#tab1{border:10px dashed #999; padding:10px; width:90%; height:800px; float:right;}
+#tab2{border:10px dashed #999; padding:10px; width:90%; height:800px;float:right;}
+#tab3{border:10px dashed #999; padding:10px; width:90%; height:800px;float:right;}
+#tab4{border:10px dashed #999; padding:10px; width:90%; height:800px;float:right;}
+#tab5{border:10px dashed #999; padding:10px; width:90%; height:800px;float:right;}
